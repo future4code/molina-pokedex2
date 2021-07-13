@@ -1,4 +1,5 @@
 import React from 'react'
+import {ContainerHeader} from "../../styled/HeaderStyled"
 import { useHistory } from 'react-router-dom'
 
 const Header = () => {
@@ -9,9 +10,10 @@ const Header = () => {
     }
 
     return(
-        <div>
+        <ContainerHeader>
             <button onClick={changePage}>Pokedex</button>
-        </div>
+            <h1>Pokedex</h1>
+        </ContainerHeader>
     )
 }
 

@@ -2,7 +2,9 @@ import React from 'react'
 
 const PokedexPage = () => {
     return(
-        <div>PokedexPage</div>
+        <div>
+   
+        </div>
     )
 }
 
