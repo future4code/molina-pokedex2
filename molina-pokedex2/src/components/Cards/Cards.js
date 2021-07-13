@@ -1,38 +1,18 @@
-import React, {useState} from 'react'
-import {Container,ContaineCads} from '../../styled/Cads'
-import GetPredominatColor from '../../Functions/GetPokemonDetails'
+import React from 'react'
+import {Container} from '../../styled/Cads'
 import GetPokemons from '../../Hooks/GetPokemons'
-import getPokemonDetails from '../../Functions/GetPokemonDetails'
+import CardPokemon from '../Cards/CardPokemon'
 
 const Cards = () => {
 
+
     const pokemons = GetPokemons()
-    console.log("Todos os Pokemons:", pokemons)
 
     const allPokemons = (pokemons.map((pokemon) => {
-        const pokemonDetails = getPokemonDetails(pokemon.url)
-        console.log("urlpokemon pokemons",pokemon.url)
-        console.log("detalhes pokemons",pokemonDetails)
-        if (pokemonDetails !== null){
-            const predominantColor = GetPredominatColor(pokemonDetails.sprites)
-            return(
-            <ContaineCads style={{backgroundColor: predominantColor}} key={pokemon.name}>
-                    <h2>{pokemonDetails.sprites}</h2>
-                    <div id="containerImg">
-                        <img src={pokemon.url} alt={pokemon.name}/>
-                    </div>
-                    <div id="containerButtons">
-                        <button className="buttons">Adicionar a Pokedex</button>
-                        <button className="buttons">Detalhar</button>
-                </div>
-            </ContaineCads>
+        return(
+            <CardPokemon url={pokemon.url}/>
         )
-        }else{
-            return(
-                <div>Não há pokemon</div>
-            )
-        }
-        
+
     }))
 
 //     const[pokemons, setPokemons] = useState([
