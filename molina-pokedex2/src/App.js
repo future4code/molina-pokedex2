@@ -1,10 +1,11 @@
+import GlobalState from './global/GlobalState';
 import Router from './Router/Router'
 
 function App() {
   return (
-    <div>
+    <GlobalState>
       <Router/>
-    </div>
+    </GlobalState>
   );
 }
 

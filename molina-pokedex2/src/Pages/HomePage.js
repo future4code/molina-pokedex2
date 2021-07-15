@@ -1,18 +1,24 @@
-import React from 'react'
-import GetPokemons from '../Hooks/GetPokemons'
+import React, {useContext, useEffect} from 'react'
 import CardPokemon from '../Components/Cards/CardPokemon'
 import {Container} from '../styled/Cads'
+import { GlobalStateContext } from '../global/GlobalStateContext'
 
 const HomePage = () => {
-    const pokemons = GetPokemons()
+    const { states, requests } = useContext(GlobalStateContext);
+    const {pokemonsDetails} = states
+    const {getPokemons} = requests
 
-    const allPokemons = (pokemons.map((pokemon) => {
+    useEffect(() =>{
+        getPokemons()
+    },[])
+
+    console.log("detalhe pokemon Homepage",pokemonsDetails)
+
+    const allPokemons = (pokemonsDetails.map((pokemon, index) => {
         return(
-            <CardPokemon url={pokemon.url} key={pokemon.name}/>
+            <CardPokemon pokemonDetails={pokemon} key={index}/>
         )
-
     }))
-
 
     return(
         <Container>
