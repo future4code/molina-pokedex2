@@ -5,33 +5,40 @@ import { useHistory } from 'react-router'
 import {ContaineCads} from '../../styled/Cads'
 
 const CardPokemon = (props) => {
+    console.log(props.pokemonDetails)
     const history = useHistory()
     const[pokemon, setPokemon] = useState({})
     const[linkImage, setLinkImage] = useState("")
     const { data, loading, error } = usePalette(linkImage)
 
-    useEffect(()=>{
-        axios.get(`${props.url}`)
-        .then((response) =>{
-            setPokemon(response.data)
-            setLinkImage(response.data.sprites.front_default)
-        })
-        .catch((error) =>{
-            console.log(error.response)
-        })
-    },[])
+    // props.pokemonDetails.sprites && props.pokemonDetails.sprites.front_default && setLinkImage(props.pokemonDetails.sprites.front_default)
+
+    
+
+
+
+    // useEffect(()=>{
+    //     axios.get(`${props.url}`)
+    //     .then((response) =>{
+    //         setPokemon(response.data)
+    //         setLinkImage(response.data.sprites.front_default)
+    //     })
+    //     .catch((error) =>{
+    //         console.log(error.response)
+    //     })
+    // },[])
 
     const goToPokemonDetails = () => {
-        history.push()
+        const pokemondetails = props.pokemonDetails
+        history.push(`/pokemondetails/${props.pokemonDetails.forms[0].name}`)
     }
 
-
-
     return(
-    <ContaineCads style={{backgroundColor: data.vibrant}} key={pokemon.name}>
-            <h2>{pokemon.name}</h2>
+    <ContaineCads style={{backgroundColor: data.vibrant}}>
+            {<h2>{props.pokemonDetails.forms && props.pokemonDetails.forms[0].name}</h2>}
             <div id="containerImg">
-                {pokemon.sprites && pokemon.sprites.front_default && <img src={pokemon.sprites.front_default} alt={pokemon.name}/>}
+                {props.pokemonDetails.sprites && props.pokemonDetails.sprites.front_default
+                && <img src={props.pokemonDetails.sprites.front_default}/>}
             </div>
             <div id="containerButtons">
                 <button className="buttons">Adicionar a Pokedex</button>
