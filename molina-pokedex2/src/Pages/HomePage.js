@@ -8,15 +8,16 @@ const HomePage = () => {
     const {pokemonsDetails} = states
     const {getPokemons} = requests
 
-    useEffect(() =>{
+    useEffect(()=>{
         getPokemons()
     },[])
 
-    console.log("detalhe pokemon Homepage",pokemonsDetails)
-
     const allPokemons = (pokemonsDetails.map((pokemon, index) => {
+
         return(
-            <CardPokemon pokemonDetails={pokemon} key={index}/>
+            <div key={index}>
+                {pokemon.abilities && <CardPokemon pokemonDetails={pokemon}/>}
+            </div>
         )
     }))
 
