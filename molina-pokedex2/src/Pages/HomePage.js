@@ -1,6 +1,6 @@
 import React from 'react'
 import GetPokemons from '../Hooks/GetPokemons'
-import CardPokemon from '../Components/Cards/CardPokemon'
+import CardPokemon from '../components/Cards/CardPokemon'
 import {Container} from '../styled/Cads'
 
 const HomePage = () => {
