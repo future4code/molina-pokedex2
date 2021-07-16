@@ -7,12 +7,8 @@ import Header from '../components/Header/Header';
 
 const HomePage = () => {
     const { states, requests } = useContext(GlobalStateContext);
-    const {pokemonsDetails} = states
-    const {getPokemons} = requests
-
-    useEffect(()=>{
-        getPokemons()
-    },[])
+    const { pokemonsDetails } = states
+    const { getPokemons } = requests
 
     const allPokemons = (pokemonsDetails.map((pokemon, index) => {
 

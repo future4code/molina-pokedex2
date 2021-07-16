@@ -1,21 +1,25 @@
 import axios from 'axios'
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import { GlobalStateContext } from './GlobalStateContext'
 import { usePalette } from 'react-palette'
+import { BASE_URL } from '../constants/Url'
 
 const GlobalState = (props) => {
-    const[pokemonsDetails, setPokemonDetails] = useState([])
-    const[pokemon, setPokemon] = useState([])
+    const [pokemonsDetails, setPokemonsDetails] = useState([])
+    const [pokedex, setPokedex] = useState([])
 
-    const getPokemons = () => {
-        axios.get("https://pokeapi.co/api/v2/pokemon/?limit=20&offset=0")
-        .then((response) => {
-            setPokemon(response.data.results)
-            getPokemonsDetails(response.data.results)
-        }).catch((error) => {
-            console.log(error.reponde)
-        })
-    }
+    useEffect(()=>{
+        getPokemons()
+    },[])
+    
+        const getPokemons = () => {
+            axios.get(`${BASE_URL}/pokemon/?limit=20&offset=0`)
+            .then((response) => {
+                getPokemonsDetails(response.data.results)
+            }).catch((error) => {
+                console.log(error.reponde)
+            })
+        }
 
     const getPokemonsDetails = async (pokemons) => {
         const pokemonsArrays = []
@@ -28,11 +32,11 @@ const GlobalState = (props) => {
                 console.log(err.response)
             }
         }
-        setPokemonDetails(pokemonsArrays)
+        setPokemonsDetails(pokemonsArrays)
     }
 
-    const states = {pokemonsDetails, pokemon}
-    const setters = {setPokemonDetails}
+    const states = {pokemonsDetails, pokedex}
+    const setters = {setPokemonsDetails, setPokedex}
     const requests = {getPokemons, getPokemonsDetails}
 
     return(
