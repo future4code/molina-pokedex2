@@ -9,10 +9,6 @@ const PokedexPage = () => {
     const { pokemonsDetails } = states
     const { getPokemons } = requests
 
-    useEffect(()=>{
-        getPokemons()
-    },[])
-
     const allPokemons = (states.pokedex.map((pokemon, index) => {
 
         return(

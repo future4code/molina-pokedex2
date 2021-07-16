@@ -1,5 +1,5 @@
 import axios from 'axios'
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import { GlobalStateContext } from './GlobalStateContext'
 import { usePalette } from 'react-palette'
 import { BASE_URL } from '../constants/Url'
@@ -7,15 +7,21 @@ import { BASE_URL } from '../constants/Url'
 const GlobalState = (props) => {
     const [pokemonsDetails, setPokemonsDetails] = useState([])
     const [pokedex, setPokedex] = useState([])
+    const [ pokemons, setPokemons ] = useState([])
 
-    const getPokemons = () => {
-        axios.get(`${BASE_URL}/pokemon/?limit=20&offset=0`)
-        .then((response) => {
-            getPokemonsDetails(response.data.results)
-        }).catch((error) => {
-            console.log(error.reponde)
-        })
-    }
+    useEffect(()=>{
+        getPokemons()
+    },[])
+    
+        const getPokemons = () => {
+            axios.get(`${BASE_URL}/pokemon/?limit=20&offset=0`)
+            .then((response) => {
+                setPokemons(response.data.results)
+                getPokemonsDetails(response.data.results)
+            }).catch((error) => {
+                console.log(error.reponde)
+            })
+        }
 
     const getPokemonsDetails = async (pokemons) => {
         const pokemonsArrays = []

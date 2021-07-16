@@ -10,10 +10,6 @@ const HomePage = () => {
     const { pokemonsDetails } = states
     const { getPokemons } = requests
 
-    useEffect(()=>{
-        getPokemons()
-    },[])
-
     const allPokemons = (pokemonsDetails.map((pokemon, index) => {
 
         return(
