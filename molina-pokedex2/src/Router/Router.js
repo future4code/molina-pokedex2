@@ -2,12 +2,11 @@ import { BrowserRouter, Switch, Route} from 'react-router-dom';
 import HomePage from '../Pages/HomePage'
 import PokemonDetails from '../Pages/PokemonDetails'
 import PokedexPage from '../Pages/PokedexPage';
-import Header from '../Components/Header/Header';
+import Header from '../components/Header/Header';
 
 const Router = () => {
     return(
         <BrowserRouter>
-        <Header/>
             <Switch>
                 <Route exact path="/">
                     <HomePage/>

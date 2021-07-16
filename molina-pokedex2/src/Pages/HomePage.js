@@ -1,7 +1,9 @@
 import React, {useContext, useEffect} from 'react'
-import CardPokemon from '../Components/Cards/CardPokemon'
+import CardPokemon from '../components/Cards/CardPokemon'
 import {Container} from '../styled/Cads'
 import { GlobalStateContext } from '../global/GlobalStateContext'
+import Header from '../components/Header/Header';
+
 
 const HomePage = () => {
     const { states, requests } = useContext(GlobalStateContext);
@@ -22,9 +24,12 @@ const HomePage = () => {
     }))
 
     return(
+        <div> 
+        <Header/>
         <Container>
             {allPokemons}
         </Container>
+        </div>
     )
 }
 
