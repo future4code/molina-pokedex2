@@ -5,12 +5,9 @@ import { GlobalStateContext } from '../global/GlobalStateContext'
 import Header from '../components/Header/Header';
 
 const PokedexPage = () => {
-    const { states, requests } = useContext(GlobalStateContext);
-    const { pokemonsDetails } = states
-    const { getPokemons } = requests
+    const { states, setters } = useContext(GlobalStateContext);
 
     const allPokemons = (states.pokedex.map((pokemon, index) => {
-
         return(
             <div key={index}>
                 {pokemon.abilities && <CardPokemon pokedex pokemonDetails={pokemon}/>}

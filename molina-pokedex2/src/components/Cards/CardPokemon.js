@@ -8,9 +8,9 @@ const CardPokemon = (props) => {
     const history = useHistory()
     const { data } = usePalette(props.pokemonDetails.sprites.front_default)
     const { states, requests, setters } = useContext(GlobalStateContext);
-    const { pokemonsDetails, pokedex } = states
+    const { pokemonsDetails, pokedex, isPokedex } = states
     const { getPokemons } = requests
-    const { setPokemonsDetails, setPokedex } = setters
+    const { setPokemonsDetails, setPokedex, setIsPokedex } = setters
 
 
     const goToPokemonDetails = () => {

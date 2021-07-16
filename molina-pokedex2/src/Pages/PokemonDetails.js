@@ -6,16 +6,20 @@ import Header from '../components/Header/Header';
 
 const PokemonDetails = () => {
     const { states} = useContext(GlobalStateContext);
-    const {pokemonsDetails} = states
+    const {pokemonsDetails, pokedex} = states
     const params = useParams()
     const [details, setDetails] = useState()
 
     const verification = () => {
+        pokedex.forEach(element => {
+            if(params.name === element.name) {
+                setDetails(element)
+            }
+        })
         pokemonsDetails.forEach(element => {
             if(params.name === element.name) {
                 setDetails(element)
             }
-            
         })
     }
     

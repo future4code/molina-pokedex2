@@ -7,7 +7,6 @@ import { BASE_URL } from '../constants/Url'
 const GlobalState = (props) => {
     const [pokemonsDetails, setPokemonsDetails] = useState([])
     const [pokedex, setPokedex] = useState([])
-    const [ pokemons, setPokemons ] = useState([])
 
     useEffect(()=>{
         getPokemons()
@@ -16,7 +15,6 @@ const GlobalState = (props) => {
         const getPokemons = () => {
             axios.get(`${BASE_URL}/pokemon/?limit=20&offset=0`)
             .then((response) => {
-                setPokemons(response.data.results)
                 getPokemonsDetails(response.data.results)
             }).catch((error) => {
                 console.log(error.reponde)
