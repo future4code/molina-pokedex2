@@ -67,7 +67,7 @@ Além disto é bom ter um editor para trabalhar com o código como [VSCode](http
 $ git clone <https://github.com/future4code/molina-pokedex2.git>
 
 # Acesse a pasta do projeto no terminal
-$ cd ./molina-labe-ninja1
+$ cd ./molina-pokedex2
 
 # Instale as dependências
 $ npm install
