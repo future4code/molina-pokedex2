@@ -6,8 +6,7 @@ const Header = () => {
     const history = useHistory()
 
     let urlAtual = (window.location.href).split("/")
-   console.log("linkatual", urlAtual[4])
-
+   
     let urlAgrupada = ''
     for(let i = 3; i<urlAtual.length; i++) {
         urlAgrupada = urlAgrupada.concat(urlAtual[i])
