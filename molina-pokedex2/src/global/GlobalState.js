@@ -2,13 +2,14 @@ import axios from 'axios'
 import React, {useState} from 'react'
 import { GlobalStateContext } from './GlobalStateContext'
 import { usePalette } from 'react-palette'
+import { BASE_URL } from '../constants/Url'
 
 const GlobalState = (props) => {
     const[pokemonsDetails, setPokemonDetails] = useState([])
     const[pokemon, setPokemon] = useState([])
 
     const getPokemons = () => {
-        axios.get("https://pokeapi.co/api/v2/pokemon/?limit=20&offset=0")
+        axios.get(`${BASE_URL}/pokemon/?limit=20&offset=0`)
         .then((response) => {
             setPokemon(response.data.results)
             getPokemonsDetails(response.data.results)
