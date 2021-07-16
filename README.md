@@ -105,6 +105,10 @@ $ npm run start
  <br />
  <sub><b>Vitória Mochovik</b></sub></a> <a href="https://github.com/VitoriaMochovik">🚀</a></td>
 
+ <td align="center"><a href="https://github.com/Antonio-Machado"><img style="border-radius: 50%" src="https://avatars.githubusercontent.com/u/83234003?v=4" width="100px" alt=""/>
+ <br />
+ <sub><b>Antônio Machado</b></sub></a> <a href="https://github.com/Antonio-Machado">🚀</a></td>
+
 
 </tr>
 </table>
