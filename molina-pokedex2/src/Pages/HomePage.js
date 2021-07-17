@@ -3,6 +3,7 @@ import CardPokemon from '../components/Cards/CardPokemon'
 import {Container} from '../styled/Cads'
 import { GlobalStateContext } from '../global/GlobalStateContext'
 import Header from '../components/Header/Header';
+import {ContainerCards } from '../styled/Home'
 
 
 const HomePage = () => {
@@ -11,7 +12,6 @@ const HomePage = () => {
     const { getPokemons } = requests
 
     const allPokemons = (pokemonsDetails.map((pokemon, index) => {
-
         return(
             <div key={index}>
                 {pokemon.abilities && <CardPokemon pokemonDetails={pokemon}/>}
@@ -22,9 +22,11 @@ const HomePage = () => {
     return(
         <div> 
         <Header/>
-        <Container>
-            {allPokemons}
-        </Container>
+        <div>
+            {pokemonsDetails ? 
+            <Container> {allPokemons} </Container>
+            : <p> Carregando... </p>}
+        </div>
         </div>
     )
 }
