@@ -5,6 +5,7 @@ export const Container = styled.div`
     grid-template-columns: repeat(5,260px);
     gap: 8px;
     padding: 16px;
+    flex-wrap: wrap;
 `
 
 export const ContaineCads = styled.div`
