@@ -1,7 +1,6 @@
 import axios from 'axios'
 import React, {useEffect, useState} from 'react'
 import { GlobalStateContext } from './GlobalStateContext'
-import { usePalette } from 'react-palette'
 import { BASE_URL } from '../constants/Url'
 
 const GlobalState = (props) => {

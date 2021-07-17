@@ -2,15 +2,9 @@ import styled from 'styled-components'
 
 export const ContaineCads = styled.div`
     display: flex;
-    /* flex-direction: column; */
     align-items: center;
     justify-content: center;
-    /* width: 100vw;
-    height: 250px; */
-    /* background-color: #0000CD; */
     padding: 8px;
-    /* border-radius: 16px;
-    margin-right: 55px; */
 
     h2{
         color: white;
@@ -29,11 +23,9 @@ export const ContainerImg = styled.div`
     align-items: center;
     
     width: 100%;
-    /* background-color: blue; */
 `
 
 export const ContainerInformationOne= styled.div`
-    /* background-color: purple; */
 
 `
 
@@ -99,8 +91,6 @@ export const CardTipo = styled.div`
     background-color: rgb(255, 255, 255, 0.5);
     color: white;
     border-radius: 15px;
-    /* width: 150%;
-    height: 100%; */
 
     width: 5%;
     padding: 1px;
@@ -114,7 +104,6 @@ export const ContainerDetails = styled.div`
     justify-content: center;
     padding: 35px;
     border-radius: 55px;
-    /* position: absolute; */
    
     margin-bottom: 80px;
     margin-top: 100px;
