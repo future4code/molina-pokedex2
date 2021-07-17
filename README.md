@@ -43,7 +43,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [ ] Melhorias na responsividade
 
 <h2 id="link">:link: Link Surge - link para visualização do site</h2>
- <a href="pokedex-molina2.surge.sh">Pokedex</a>
+ <a href="pokedex-molina2.surge.sh/">Pokedex</a>
 
 <!-- <h2 id="imagens">:computer: Imagens Desktop</h2>
 
